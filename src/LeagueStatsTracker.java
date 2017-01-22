@@ -20,6 +20,28 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
         initComponents();
     }
 
+        //initialize constants
+        int win=2;
+        int tie= 1;
+        int loss= 0;
+        int Canadiens=0;
+        int Bruins=1;
+        int Leafs=2;
+        int Rangers=3;
+        
+        //initialize array of teams
+        int[][] Standings = new int[][]
+        {
+        { Canadiens, 0, 0, 0, 0, 0},
+        { Bruins, 0, 0, 0, 0, 0},
+        { Leafs, 0, 0, 0, 0, 0},
+        { Rangers, 0, 0, 0, 0, 0}
+        };           
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -203,9 +225,9 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
         team2result = getResult(score2, score1);
         
         
-        
-        
-        
+        //call UpdateStandings method for each team
+        UpdateStandings(team1, team1result);
+        UpdateStandings(team2, team2result);
         
         
         
@@ -244,7 +266,34 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
         return result;
     }
     
-    
+    public void UpdateStandings(int teamnum, String result){
+        
+        //update standngs for passed in team
+        
+        //update games played
+        Standings[teamnum][1]++;
+        
+        //based on result update appropriate column and pts
+        if(result=="W"){
+            Standings[teamnum][2]++;
+            Standings[teamnum][5]= Standings[teamnum][5]+win;
+        }
+        if(result=="L"){
+            Standings[teamnum][3]++;
+            Standings[teamnum][5]= Standings[teamnum][5]+loss;
+        }
+        if(result=="T"){
+            Standings[teamnum][4]++;
+            Standings[teamnum][5]= Standings[teamnum][5]+tie;
+        }
+        
+        
+        
+        
+        
+        
+        return;
+    }
     
     
     
@@ -291,25 +340,19 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        //initialize constants
-        int win=2;
-        int tie= 1;
-        int loss= 0;
-        int Canadiens=0;
-        int Bruins=1;
-        int Leafs=2;
-        int Rangers=3;
+ 
         
-        //initialize array of teams
-        int[][] Standings = new int[][]
-        {
-        { Canadiens, 0, 0, 0, 0, 0},
-        { Bruins, 0, 0, 0, 0, 0},
-        { Leafs, 0, 0, 0, 0, 0},
-        { Rangers, 0, 0, 0, 0, 0}
-        };        
+            
         
-                
+        
+        
+        
+        
+        
+        
+        
+        
+       
 
     
   
