@@ -38,7 +38,7 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
         { Rangers, 0, 0, 0, 0, 0}
         };           
     
-        //create a copy of Standings that we can use to sort and display
+        //create a copy of Standings that we can use to sort and display(initializing DisplayStandings)
         int[][] DisplayStandings= Standings;
         
     
@@ -296,7 +296,7 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
         UpdateStandings(team1, team1result);
         UpdateStandings(team2, team2result);
         
-        //make copy of updated standings to sort and display
+        //make copy of updated standings standings to sort and display
         DisplayStandings= Standings.clone();
         
         //sort DisplayStandings
@@ -307,7 +307,7 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
         //Show DisplayStandings
         //call showstandings method
         ShowStandings();
-        //
+        
         
         
         
@@ -318,7 +318,7 @@ public class LeagueStatsTracker extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        
+        //Clear Scores (empty score texboxes)
         jTextField3.setText("");
         jTextField4.setText("");
         
